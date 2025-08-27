@@ -1,0 +1,25 @@
+using AutoBaseModel.Controllers;
+using AutoBaseModel.Models;
+using AutoBaseModel.Views;
+
+namespace AutoBaseModel
+{
+    internal static class Program
+    {
+        /// <summary>
+        ///  The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            // To customize application configuration such as set high DPI settings or default font,
+            // see https://aka.ms/applicationconfiguration.
+            ApplicationConfiguration.Initialize();
+
+            MainForm form = new MainForm();
+            Model model = new Model();
+            Controller controller = new Controller(model, form);
+            Application.Run(form);
+        }
+    }
+}
